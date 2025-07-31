@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#8b5cf6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <title>WebLade - Веб-студия полного цикла</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bg-animated"></div>
+    <div class="bg-grid"></div>
+    <div class="bg-particles" id="particles"></div>
+
+    <!-- Parallax layers -->
+    <div class="parallax-layer" id="parallax-layer-1">
+        <div class="parallax-element parallax-shape-1"></div>
+        <div class="parallax-element parallax-shape-2"></div>
+        <div class="parallax-element parallax-shape-3"></div>
+    </div>
+
+    <nav>
+        <div class="logo">WebLade</div>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="#home" data-en="Home" data-ru="Главная">Главная</a></li>
+                <li><a href="#services" data-en="Services" data-ru="Услуги">Услуги</a></li>
+                <li><a href="#portfolio" data-en="Portfolio" data-ru="Портфолио">Портфолио</a></li>
+                <li><a href="#contact" data-en="Contact" data-ru="Контакты">Контакты</a></li>
+            </ul>
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="ru">RU</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="logo">WebLade</div>
+            <button class="mobile-menu-close" aria-label="Close mobile menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#home" data-en="Home" data-ru="Главная">Главная</a></li>
+            <li><a href="#services" data-en="Services" data-ru="Услуги">Услуги</a></li>
+            <li><a href="#portfolio" data-en="Portfolio" data-ru="Портфолио">Портфолио</a></li>
+            <li><a href="#contact" data-en="Contact" data-ru="Контакты">Контакты</a></li>
+        </ul>
+        <div class="mobile-lang-switch">
+            <button class="lang-btn active" data-lang="ru">RU</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+    </div>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-subtitle tech-font" data-en="&lt; Full-Cycle Digital Agency /&gt;" data-ru="&lt; Веб-студия полного цикла /&gt;">&lt; Веб-студия полного цикла /&gt;</div>
+            <h1 class="heading-font typewriter" id="typewriter-text"></h1>
+            <p class="hero-description" data-en="We build cutting-edge websites, boost search rankings, and create powerful advertising campaigns. Your digital success is our expertise." data-ru="Создаем современные сайты, продвигаем в поиске, настраиваем эффективную рекламу. Ваш успех в digital - наша экспертиза.">Создаем современные сайты, продвигаем в поиске, настраиваем эффективную рекламу. Ваш успех в digital - наша экспертиза.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="cta-button" data-en="Start Project →" data-ru="Начать проект →">Начать проект →</a>
+                <a href="#portfolio" class="cta-button secondary" data-en="View Portfolio" data-ru="Посмотреть работы">Посмотреть работы</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services animate-on-scroll" id="services">
+        <h2 class="section-title heading-font" data-en="Our Expertise" data-ru="Наша экспертиза">Наша экспертиза</h2>
+        <p class="section-subtitle" data-en="Comprehensive digital solutions powered by cutting-edge technology" data-ru="Комплексные цифровые решения на основе передовых технологий">Комплексные цифровые решения на основе передовых технологий</p>
+        
+        <div class="services-tabs">
+            <div class="service-tab active" data-service="web-dev">
+                <span class="service-tab-icon">🚀</span>
+                <h3 class="service-tab-title" data-en="Web Development" data-ru="Веб-разработка">Веб-разработка</h3>
+            </div>
+            <div class="service-tab" data-service="seo">
+                <span class="service-tab-icon">📈</span>
+                <h3 class="service-tab-title" data-en="SEO Optimization" data-ru="SEO продвижение">SEO продвижение</h3>
+            </div>
+            <div class="service-tab" data-service="ads">
+                <span class="service-tab-icon">🎯</span>
+                <h3 class="service-tab-title" data-en="Digital Advertising" data-ru="Цифровая реклама">Цифровая реклама</h3>
+            </div>
+            <div class="service-tab" data-service="mobile">
+                <span class="service-tab-icon">📱</span>
+                <h3 class="service-tab-title" data-en="Mobile Development" data-ru="Мобильная разработка">Мобильная разработка</h3>
+            </div>
+            <div class="service-tab" data-service="support">
+                <span class="service-tab-icon">⚡</span>
+                <h3 class="service-tab-title" data-en="Technical Support" data-ru="Техподдержка">Техподдержка</h3>
+            </div>
+            <div class="service-tab" data-service="design">
+                <span class="service-tab-icon">💎</span>
+                <h3 class="service-tab-title" data-en="UI/UX Design" data-ru="UI/UX Дизайн">UI/UX Дизайн</h3>
+            </div>
+        </div>
+
+        <div class="service-content active" data-content="web-dev">
+            <div class="service-details">
+                <div class="service-info">
+                    <h3 data-en="Web Development" data-ru="Веб-разработка">Веб-разработка</h3>
+                    <p class="service-description" data-en="We create modern, fast, and responsive websites using cutting-edge technologies. From simple landing pages to complex web applications, our solutions are tailored to your business needs and built with scalability in mind." data-ru="Создаем современные, быстрые и адаптивные сайты с использованием передовых технологий. От простых лендингов до сложных веб-приложений - наши решения адаптированы под потребности вашего бизнеса и созданы с учетом масштабируемости.">Создаем современные, быстрые и адаптивные сайты с использованием передовых технологий. От простых лендингов до сложных веб-приложений - наши решения адаптированы под потребности вашего бизнеса и созданы с учетом масштабируемости.</p>
+                    
+                    <ul class="service-features">
+                        <li data-en="Responsive design for all devices" data-ru="Адаптивный дизайн для всех устройств">Адаптивный дизайн для всех устройств</li>
+                        <li data-en="SEO-optimized structure" data-ru="SEO-оптимизированная структура">SEO-оптимизированная структура</li>
+                        <li data-en="High performance and loading speed" data-ru="Высокая производительность и скорость загрузки">Высокая производительность и скорость загрузки</li>
+                        <li data-en="Modern security standards" data-ru="Современные стандарты безопасности">Современные стандарты безопасности</li>
+                        <li data-en="Content Management System integration" data-ru="Интеграция системы управления контентом">Интеграция системы управления контентом</li>
+                        <li data-en="Analytics and conversion tracking" data-ru="Аналитика и отслеживание конверсий">Аналитика и отслеживание конверсий</li>
+                    </ul>
+                    
+                    <div class="service-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                    </div>
+                </div>
+                
+                <div class="service-pricing">
+                    <div class="pricing-label" data-en="Starting from" data-ru="Стоимость от">Стоимость от</div>
+                    <div class="pricing-amount">$500</div>
+                    <div class="pricing-period" data-en="per project" data-ru="за проект">за проект</div>
+                    <div class="pricing-note" data-en="Final price depends on complexity and requirements" data-ru="Итоговая стоимость зависит от сложности и требований">Итоговая стоимость зависит от сложности и требований</div>
+                    <button class="service-cta" data-en="Get Quote" data-ru="Получить расчет">Получить расчет</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-content" data-content="seo">
+            <div class="service-details">
+                <div class="service-info">
+                    <h3 data-en="SEO Optimization" data-ru="SEO продвижение">SEO продвижение</h3>
+                    <p class="service-description" data-en="Comprehensive SEO strategies to boost your search rankings and drive organic traffic. We use data-driven approaches and proven techniques to improve your visibility across all search engines." data-ru="Комплексные SEO-стратегии для повышения позиций в поисковых системах и привлечения органического трафика. Используем подходы, основанные на данных, и проверенные методы для улучшения видимости во всех поисковых системах.">Комплексные SEO-стратегии для повышения позиций в поисковых системах и привлечения органического трафика. Используем подходы, основанные на данных, и проверенные методы для улучшения видимости во всех поисковых системах.</p>
+                    
+                    <ul class="service-features">
+                        <li data-en="Technical SEO audit and optimization" data-ru="Технический SEO-аудит и оптимизация">Технический SEO-аудит и оптимизация</li>
+                        <li data-en="Keyword research and strategy" data-ru="Исследование ключевых слов и стратегия">Исследование ключевых слов и стратегия</li>
+                        <li data-en="Content optimization and creation" data-ru="Оптимизация и создание контента">Оптимизация и создание контента</li>
+                        <li data-en="Link building campaigns" data-ru="Кампании по наращиванию ссылочной массы">Кампании по наращиванию ссылочной массы</li>
+                        <li data-en="Local SEO optimization" data-ru="Локальная SEO-оптимизация">Локальная SEO-оптимизация</li>
+                        <li data-en="Monthly reporting and analytics" data-ru="Ежемесячная отчетность и аналитика">Ежемесячная отчетность и аналитика</li>
+                    </ul>
+                    
+                    <div class="service-tech">
+                        <span class="tech-tag">Google Analytics</span>
+                        <span class="tech-tag">Search Console</span>
+                        <span class="tech-tag">Ahrefs</span>
+                        <span class="tech-tag">SEMrush</span>
+                        <span class="tech-tag">Screaming Frog</span>
+                        <span class="tech-tag">GTMetrix</span>
+                    </div>
+                </div>
+                
+                <div class="service-pricing">
+                    <div class="pricing-label" data-en="Starting from" data-ru="Стоимость от">Стоимость от</div>
+                    <div class="pricing-amount">$300</div>
+                    <div class="pricing-period" data-en="per month" data-ru="в месяц">в месяц</div>
+                    <div class="pricing-note" data-en="Minimum 3-month commitment required" data-ru="Минимальный период работы - 3 месяца">Минимальный период работы - 3 месяца</div>
+                    <button class="service-cta" data-en="Start SEO Campaign" data-ru="Начать SEO-кампанию">Начать SEO-кампанию</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-content" data-content="ads">
+            <div class="service-details">
+                <div class="service-info">
+                    <h3 data-en="Digital Advertising" data-ru="Цифровая реклама">Цифровая реклама</h3>
+                    <p class="service-description" data-en="Strategic advertising campaigns across all digital platforms. We create, manage, and optimize ads to maximize your ROI and reach your target audience effectively." data-ru="Стратегические рекламные кампании на всех цифровых платформах. Создаем, управляем и оптимизируем рекламу для максимизации окупаемости инвестиций и эффективного достижения целевой аудитории.">Стратегические рекламные кампании на всех цифровых платформах. Создаем, управляем и оптимизируем рекламу для максимизации окупаемости инвестиций и эффективного достижения целевой аудитории.</p>
+                    
+                    <ul class="service-features">
+                        <li data-en="Google Ads campaign management" data-ru="Управление кампаниями Google Ads">Управление кампаниями Google Ads</li>
+                        <li data-en="Facebook & Instagram advertising" data-ru="Реклама в Facebook и Instagram">Реклама в Facebook и Instagram</li>
+                        <li data-en="TikTok and YouTube campaigns" data-ru="Кампании в TikTok и YouTube">Кампании в TikTok и YouTube</li>
+                        <li data-en="Conversion tracking and optimization" data-ru="Отслеживание и оптимизация конверсий">Отслеживание и оптимизация конверсий</li>
+                        <li data-en="A/B testing and creative optimization" data-ru="A/B тестирование и оптимизация креативов">A/B тестирование и оптимизация креативов</li>
+                        <li data-en="Detailed performance reporting" data-ru="Детальная отчетность по эффективности">Детальная отчетность по эффективности</li>
+                    </ul>
+                    
+                    <div class="service-tech">
+                        <span class="tech-tag">Google Ads</span>
+                        <span class="tech-tag">Facebook Ads</span>
+                        <span class="tech-tag">Instagram</span>
+                        <span class="tech-tag">TikTok Ads</span>
+                        <span class="tech-tag">YouTube</span>
+                        <span class="tech-tag">LinkedIn</span>
+                    </div>
+                </div>
+                
+                <div class="service-pricing">
+                    <div class="pricing-label" data-en="Management fee" data-ru="Комиссия за управление">Комиссия за управление</div>
+                    <div class="pricing-amount">15%</div>
+                    <div class="pricing-period" data-en="of ad spend" data-ru="от рекламного бюджета">от рекламного бюджета</div>
+                    <div class="pricing-note" data-en="Minimum $200/month + your ad budget" data-ru="Минимум $200/месяц + ваш рекламный бюджет">Минимум $200/месяц + ваш рекламный бюджет</div>
+                    <button class="service-cta" data-en="Launch Campaign" data-ru="Запустить кампанию">Запустить кампанию</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-content" data-content="mobile">
+            <div class="service-details">
+                <div class="service-info">
+                    <h3 data-en="Mobile Development" data-ru="Мобильная разработка">Мобильная разработка</h3>
+                    <p class="service-description" data-en="Native and cross-platform mobile applications that deliver exceptional user experiences. We develop apps for iOS and Android using the latest technologies and best practices." data-ru="Нативные и кроссплатформенные мобильные приложения, которые обеспечивают исключительный пользовательский опыт. Разрабатываем приложения для iOS и Android, используя новейшие технологии и лучшие практики.">Нативные и кроссплатформенные мобильные приложения, которые обеспечивают исключительный пользовательский опыт. Разрабатываем приложения для iOS и Android, используя новейшие технологии и лучшие практики.</p>
+                    
+                    <ul class="service-features">
+                        <li data-en="iOS and Android native development" data-ru="Нативная разработка для iOS и Android">Нативная разработка для iOS и Android</li>
+                        <li data-en="Cross-platform solutions (React Native, Flutter)" data-ru="Кроссплатформенные решения (React Native, Flutter)">Кроссплатформенные решения (React Native, Flutter)</li>
+                        <li data-en="UI/UX design for mobile interfaces" data-ru="UI/UX дизайн для мобильных интерфейсов">UI/UX дизайн для мобильных интерфейсов</li>
+                        <li data-en="App Store optimization and publishing" data-ru="Оптимизация и публикация в App Store">Оптимизация и публикация в App Store</li>
+                        <li data-en="Push notifications and analytics integration" data-ru="Интеграция push-уведомлений и аналитики">Интеграция push-уведомлений и аналитики</li>
+                        <li data-en="Post-launch support and updates" data-ru="Поддержка и обновления после запуска">Поддержка и обновления после запуска</li>
+                    </ul>
+                    
+                    <div class="service-tech">
+                        <span class="tech-tag">Swift</span>
+                        <span class="tech-tag">Kotlin</span>
+                        <span class="tech-tag">React Native</span>
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">AWS</span>
+                    </div>
+                </div>
+                
+                <div class="service-pricing">
+                    <div class="pricing-label" data-en="Starting from" data-ru="Стоимость от">Стоимость от</div>
+                    <div class="pricing-amount">$2000</div>
+                    <div class="pricing-period" data-en="per app" data-ru="за приложение">за приложение</div>
+                    <div class="pricing-note" data-en="Price varies based on features and complexity" data-ru="Цена зависит от функционала и сложности">Цена зависит от функционала и сложности</div>
+                    <button class="service-cta" data-en="Discuss App Project" data-ru="Обсудить проект приложения">Обсудить проект приложения</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-content" data-content="support">
+            <div class="service-details">
+                <div class="service-info">
+                    <h3 data-en="Technical Support" data-ru="Техподдержка">Техподдержка</h3>
+                    <p class="service-description" data-en="Complete project maintenance and technical support to keep your digital assets running smoothly. We provide ongoing updates, security monitoring, and performance optimization." data-ru="Полное сопровождение проектов и техническая поддержка для бесперебойной работы ваших цифровых активов. Обеспечиваем постоянные обновления, мониторинг безопасности и оптимизацию производительности.">Полное сопровождение проектов и техническая поддержка для бесперебойной работы ваших цифровых активов. Обеспечиваем постоянные обновления, мониторинг безопасности и оптимизацию производительности.</p>
+                    
+                    <ul class="service-features">
+                        <li data-en="24/7 monitoring and support" data-ru="Круглосуточный мониторинг и поддержка">Круглосуточный мониторинг и поддержка</li>
+                        <li data-en="Regular backups and security updates" data-ru="Регулярные резервные копии и обновления безопасности">Регулярные резервные копии и обновления безопасности</li>
+                        <li data-en="Performance optimization and caching" data-ru="Оптимизация производительности и кеширование">Оптимизация производительности и кеширование</li>
+                        <li data-en="SSL certificates and security measures" data-ru="SSL-сертификаты и меры безопасности">SSL-сертификаты и меры безопасности</li>
+                        <li data-en="Content updates and minor modifications" data-ru="Обновления контента и незначительные изменения">Обновления контента и незначительные изменения</li>
+                        <li data-en="Monthly reports and recommendations" data-ru="Ежемесячные отчеты и рекомендации">Ежемесячные отчеты и рекомендации</li>
+                    </ul>
+                    
+                    <div class="service-tech">
+                        <span class="tech-tag">CloudFlare</span>
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Monitoring</span>
+                        <span class="tech-tag">SSL</span>
+                        <span class="tech-tag">Backups</span>
+                    </div>
+                </div>
+                
+                <div class="service-pricing">
+                    <div class="pricing-label" data-en="Starting from" data-ru="Стоимость от">Стоимость от</div>
+                    <div class="pricing-amount">$150</div>
+                    <div class="pricing-period" data-en="per month" data-ru="в месяц">в месяц</div>
+                    <div class="pricing-note" data-en="Includes hosting, monitoring, and basic support" data-ru="Включает хостинг, мониторинг и базовую поддержку">Включает хостинг, мониторинг и базовую поддержку</div>
+                    <button class="service-cta" data-en="Get Support Plan" data-ru="Получить план поддержки">Получить план поддержки</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-content" data-content="design">
+            <div class="service-details">
+                <div class="service-info">
+                    <h3 data-en="UI/UX Design" data-ru="UI/UX Дизайн">UI/UX Дизайн</h3>
+                    <p class="service-description" data-en="User-centered design that converts visitors into customers. We create intuitive interfaces and optimize user experiences to maximize engagement and achieve your business goals." data-ru="Пользовательский дизайн, который конвертирует посетителей в клиентов. Создаем интуитивные интерфейсы и оптимизируем пользовательский опыт для максимального вовлечения и достижения бизнес-целей.">Пользовательский дизайн, который конвертирует посетителей в клиентов. Создаем интуитивные интерфейсы и оптимизируем пользовательский опыт для максимального вовлечения и достижения бизнес-целей.</p>
+                    
+                    <ul class="service-features">
+                        <li data-en="User research and persona development" data-ru="Исследование пользователей и разработка персон">Исследование пользователей и разработка персон</li>
+                        <li data-en="Wireframes and interactive prototypes" data-ru="Wireframes и интерактивные прототипы">Wireframes и интерактивные прототипы</li>
+                        <li data-en="Visual design and branding" data-ru="Визуальный дизайн и брендинг">Визуальный дизайн и брендинг</li>
+                        <li data-en="Usability testing and optimization" data-ru="Тестирование юзабилити и оптимизация">Тестирование юзабилити и оптимизация</li>
+                        <li data-en="Design system creation" data-ru="Создание дизайн-системы">Создание дизайн-системы</li>
+                        <li data-en="Responsive design for all devices" data-ru="Адаптивный дизайн для всех устройств">Адаптивный дизайн для всех устройств</li>
+                    </ul>
+                    
+                    <div class="service-tech">
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Adobe XD</span>
+                        <span class="tech-tag">Sketch</span>
+                        <span class="tech-tag">Prototyping</span>
+                        <span class="tech-tag">After Effects</span>
+                        <span class="tech-tag">Principle</span>
+                    </div>
+                </div>
+                
+                <div class="service-pricing">
+                    <div class="pricing-label" data-en="Starting from" data-ru="Стоимость от">Стоимость от</div>
+                    <div class="pricing-amount">$800</div>
+                    <div class="pricing-period" data-en="per project" data-ru="за проект">за проект</div>
+                    <div class="pricing-note" data-en="Includes research, design, and prototyping" data-ru="Включает исследования, дизайн и прототипирование">Включает исследования, дизайн и прототипирование</div>
+                    <button class="service-cta" data-en="Start Design Project" data-ru="Начать дизайн-проект">Начать дизайн-проект</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio animate-on-scroll" id="portfolio">
+        <h2 class="section-title heading-font" data-en="Featured Projects" data-ru="Избранные проекты">Избранные проекты</h2>
+        <p class="section-subtitle" data-en="Showcasing our latest work and client success stories" data-ru="Демонстрируем наши последние работы и истории успеха клиентов">Демонстрируем наши последние работы и истории успеха клиентов</p>
+        
+        <div class="portfolio-grid">
+            <div class="portfolio-item animate-on-scroll slide-left">
+              <a href="https://www.warstriking.com/" target="_blank" class="portfolio-link">
+                <img src="img/war_room.png" alt="Warstriking Platform" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3 data-en="Warstriking Platform" data-ru="Warstriking платформа">Warstriking Platform</h3>
+                    <p data-en="Warstriking — stylish platform to buy sportswear and book workouts, wrapped in smooth UI and animations" data-ru="Полнофункциональный интернет-магазин с интеграцией платежей и управлением товарами">Warstriking — stylish platform to buy sportswear and book workouts, wrapped in smooth UI and animations</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">Sportswear</span>
+                        <span class="portfolio-tag">Booking</span>
+                        <span class="portfolio-tag">UX/UI</span>
+                    </div>
+                </div>
+              </a>
+            </div>
+            
+            <div class="portfolio-item animate-on-scroll scale-up">
+              <a href="https://webladeofficial.github.io/shimmer/" target="_blank" class="portfolio-link">
+                <img src="img/luna.png" alt="Luna" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3 data-en="Luna Startup Landing" data-ru="Корпоративный сайт">Luna Startup Landing</h3>
+                    <p data-en="High-converting landing page for AI-powered productivity startup" data-ru="Многоязычный сайт производственной компании с интеграцией CMS">High-converting landing page for AI-powered productivity startup</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">Landing Page</span>
+                        <span class="portfolio-tag">Animation</span>
+                        <span class="portfolio-tag">Conversion</span>
+                        <span class="portfolio-tag">SEO</span>
+                    </div>
+                </div>
+              </a>
+            </div>
+            
+            <div class="portfolio-item animate-on-scroll slide-right">
+              <a href="https://webladeofficial.github.io/hyperview/" target="_blank" class="portfolio-link">
+                <img src="img/hyper.png" alt="SaaS" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3 data-en="HyperEdge B2B SaaS Dashboard" data-ru="SaaS приложение">HyperEdge B2B SaaS Dashboard</h3>
+                    <p data-en="Comprehensive analytics dashboard for enterprise data management" data-ru="Веб-приложение для управления проектами с функциями совместной работы в реальном времени">Comprehensive analytics dashboard for enterprise data management</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">Dashboard</span>
+                        <span class="portfolio-tag">B2B</span>
+                        <span class="portfolio-tag">Analytics</span>
+                        <span class="portfolio-tag">Real-time</span>
+                    </div>
+                </div>
+              </a>
+            </div>
+            
+            <div class="portfolio-item animate-on-scroll slide-left">
+              <a href="https://webladeofficial.github.io/apexNDA/" target="_blank" class="portfolio-link">
+                <img src="img/apex.png" alt="Apex Creative Agency" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <h3 data-en="Apex Creative Agency" data-ru="Лендинг страница">Apex Creative Agency</h3>
+                    <p data-en="Bold, award-winning portfolio site for creative agency" data-ru="Высококонверсионная посадочная страница с продвинутыми анимациями и A/B тестированием">Bold, award-winning portfolio site for creative agency</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">HTML5</span>
+                        <span class="portfolio-tag">Creative</span>
+                        <span class="portfolio-tag">Interactive</span>
+                        <span class="portfolio-tag">Optimization</span>
+                    </div>
+                </div>
+              </a>
+            </div>
+            
+            <div class="portfolio-item animate-on-scroll slide-left">
+                <a href="https://webladeofficial.github.io/Quantum/" target="_blank" class="portfolio-link">
+                  <img src="img/quantum.png" alt="Quantum Finance App" class="portfolio-img">
+                  <div class="portfolio-overlay">
+                      <h3 data-en="Quantum Finance App" data-ru="Лендинг страница">Quantum Finance App</h3>
+                      <p data-en="Mobile-first financial management platform with real-time analytics" data-ru="Высококонверсионная посадочная страница с продвинутыми анимациями и A/B тестированием">Mobile-first financial management platform with real-time analytics</p>
+                      <div class="portfolio-tags">
+                          <span class="portfolio-tag">FinTech</span>
+                          <span class="portfolio-tag">Mobile</span>
+                          <span class="portfolio-tag">Real-time</span>
+                          <span class="portfolio-tag">Optimization</span>
+                      </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="portfolio-item animate-on-scroll slide-left">
+                <a href="https://webladeofficial.github.io/orion/" target="_blank" class="portfolio-link">
+                  <img src="img/orion.png" alt="Лендинг страница" class="portfolio-img">
+                  <div class="portfolio-overlay">
+                      <h3 data-en="Orion E-Commerce Platform" data-ru="Лендинг страница">Orion E-Commerce Platform</h3>
+                      <p data-en="Modern e-commerce solution with advanced filtering and seamless checkout experience" data-ru="Высококонверсионная посадочная страница с продвинутыми анимациями и A/B тестированием">Modern e-commerce solution with advanced filtering and seamless checkout experience</p>
+                      <div class="portfolio-tags">
+                          <span class="portfolio-tag">E-Commerce</span>
+                          <span class="portfolio-tag">JavaScript</span>
+                          <span class="portfolio-tag">Conversion</span>
+                      </div>
+                  </div>
+                </a>
+              </div>
+        </div>
+    </section>
+
+    <section class="contact animate-on-scroll" id="contact">
+        <h2 class="section-title heading-font" data-en="Let's Start Collaboration" data-ru="Начнем сотрудничество">Начнем сотрудничество</h2>
+        <p class="section-subtitle" data-en="Ready to transform your digital presence? Let's discuss your project" data-ru="Готовы трансформировать ваше цифровое присутствие? Давайте обсудим ваш проект">Готовы трансформировать ваше цифровое присутствие? Давайте обсудим ваш проект</p>
+        
+        <div class="contact-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder=" " required>
+                    <label data-en="Your Name" data-ru="Ваше имя">Ваше имя</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="contact" placeholder=" " required>
+                    <label data-en="Telegram or WhatsApp" data-ru="Telegram или WhatsApp">Telegram или WhatsApp</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <textarea name="message" placeholder=" " required></textarea>
+                <label data-en="Tell us about your project" data-ru="Расскажите о вашем проекте">Расскажите о вашем проекте</label>
+            </div>
+            <button type="submit" class="cta-button" data-en="Send Request →" data-ru="Отправить заявку →">Отправить заявку →</button>
+        </div>
+        
+        <!-- Кастомные уведомления -->
+        <div id="notification" class="notification">
+            <div class="notification-content">
+                <span class="notification-icon"></span>
+                <span class="notification-text"></span>
+                <button class="notification-close">×</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>WebLade</h3>
+                <p data-en="Your trusted partner in the digital world. We create innovative solutions that drive business growth and success." data-ru="Ваш надежный партнер в цифровом мире. Создаем инновационные решения, которые обеспечивают рост и успех бизнеса.">Ваш надежный партнер в цифровом мире. Создаем инновационные решения, которые обеспечивают рост и успех бизнеса.</p>
+            </div>
+            <div class="footer-section">
+                <h3 data-en="Services" data-ru="Услуги">Услуги</h3>
+                <p><a href="#services" data-en="Web Development" data-ru="Веб-разработка">Веб-разработка</a></p>
+                <p><a href="#services" data-en="SEO Optimization" data-ru="SEO оптимизация">SEO оптимизация</a></p>
+                <p><a href="#services" data-en="Digital Advertising" data-ru="Цифровая реклама">Цифровая реклама</a></p>
+                <p><a href="#services" data-en="UI/UX Design" data-ru="UI/UX дизайн">UI/UX дизайн</a></p>
+            </div>
+            <div class="footer-section">
+                <h3 data-en="Contact" data-ru="Контакты">Контакты</h3>
+                <p>Email: hello@webllade.com</p>
+                <p data-en="Phone: +380 XX XXX XX XX" data-ru="Телефон: +380 XX XXX XX XX">Телефон: +380 XX XXX XX XX</p>
+                <p data-en="Kyiv, Ukraine" data-ru="Киев, Украина">Киев, Украина</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook">📘</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="LinkedIn">💼</a>
+                    <a href="#" title="GitHub">🐙</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-en="&copy; 2025 WebLade. All rights reserved. | Privacy Policy | Terms of Service" data-ru="&copy; 2025 WebLade. Все права защищены. | Политика конфиденциальности | Условия использования">&copy; 2025 WebLade. Все права защищены. | Политика конфиденциальности | Условия использования</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
