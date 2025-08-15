@@ -2,19 +2,154 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#8b5cf6">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- SEO Meta Tags -->
+    <title>WebLade - Веб-студия полного цикла | Создание сайтов, SEO, Реклама</title>
+    <meta name="description" content="WebLade - профессиональная веб-студия полного цикла. Создаем современные сайты, продвигаем в поиске, настраиваем эффективную рекламу. Ваш успех в digital - наша экспертиза.">
+    <meta name="keywords" content="веб-студия, создание сайтов, веб-разработка, SEO продвижение, цифровая реклама, мобильная разработка, интернет-магазин, корпоративный сайт">
+    <meta name="author" content="WebLade">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="WebLade - Веб-студия полного цикла">
+    <meta property="og:description" content="Создаем современные сайты, продвигаем в поиске, настраиваем эффективную рекламу. Ваш успех в digital - наша экспертиза.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://weblade.ru">
+    <meta property="og:image" content="https://weblade.ru/img/og-image.jpg">
+    <meta property="og:site_name" content="WebLade">
+    <meta property="og:locale" content="ru_RU">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="WebLade - Веб-студия полного цикла">
+    <meta name="twitter:description" content="Создаем современные сайты, продвигаем в поиске, настраиваем эффективную рекламу.">
+    <meta name="twitter:image" content="https://weblade.ru/img/twitter-card.jpg">
+    
+    <!-- Theme and App Meta Tags -->
+    <meta name="theme-color" content="#D4AF37">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="WebLade">
     <meta name="format-detection" content="telephone=no">
-    <title>WebLade - Веб-студия полного цикла</title>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://weblade.ru">
+    
+    <!-- Hreflang for international SEO -->
+    <link rel="alternate" hreflang="en" href="https://weblade.ru/en">
+    <link rel="alternate" hreflang="ru" href="https://weblade.ru/ru">
+    <link rel="alternate" hreflang="x-default" href="https://weblade.ru">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icon Library - Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "WebLade",
+        "description": "Веб-студия полного цикла. Создаем современные сайты, продвигаем в поиске, настраиваем эффективную рекламу.",
+        "url": "https://weblade.ru",
+        "logo": "https://weblade.ru/img/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+7-XXX-XXX-XXXX",
+            "contactType": "customer service",
+            "availableLanguage": ["Russian", "English"]
+        },
+        "sameAs": [
+            "https://t.me/weblade",
+            "https://vk.com/weblade"
+        ],
+        "serviceType": [
+            "Веб-разработка",
+            "SEO продвижение", 
+            "Цифровая реклама",
+            "Мобильная разработка"
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "WebLade",
+        "url": "https://weblade.ru",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://weblade.ru/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
 </head>
 <body>
-    <div class="bg-animated"></div>
-    <div class="bg-grid"></div>
-    <div class="bg-particles" id="particles"></div>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+    </div>
+    
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb navigation">
+        <ol class="breadcrumb-list" id="breadcrumb-list">
+            <li class="breadcrumb-item">
+                <a href="#home" class="breadcrumb-link">
+                     <span class="breadcrumb-icon" aria-hidden="true">🏠</span>
+                    <span class="breadcrumb-text" data-en="Home" data-ru="Главная">Главная</span>
+                </a>
+            </li>
+        </ol>
+    </nav>
+
+    <div class="bg-animated" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-particles" id="particles" aria-hidden="true">
+        <svg width="100%" height="100%" style="position:absolute;inset:0;z-index:0;pointer-events:none;" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="300" cy="200" r="120" fill="url(#gold1)" opacity="0.18"/>
+            <circle cx="1700" cy="300" r="90" fill="url(#blue1)" opacity="0.13"/>
+            <ellipse cx="1200" cy="800" rx="180" ry="60" fill="url(#white1)" opacity="0.10"/>
+            <rect x="900" y="100" width="220" height="40" rx="20" fill="url(#violet1)" opacity="0.10"/>
+            <defs>
+                <radialGradient id="gold1" cx="0" cy="0" r="1" gradientTransform="translate(300 200) scale(120)" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FFD700"/>
+                    <stop offset="1" stop-color="#D4AF37" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="blue1" cx="0" cy="0" r="1" gradientTransform="translate(1700 300) scale(90)" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#4169E1"/>
+                    <stop offset="1" stop-color="#4169E1" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="white1" cx="0" cy="0" r="1" gradientTransform="translate(1200 800) scale(180 60)" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#fff"/>
+                    <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="violet1" x1="900" y1="120" x2="1120" y2="120" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#a18fff"/>
+                    <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+                </linearGradient>
+            </defs>
+        </svg>
+    </div>
 
     <!-- Parallax layers -->
     <div class="parallax-layer" id="parallax-layer-1">
@@ -66,7 +201,7 @@
     </div>
 
     <section class="hero" id="home">
-        <div class="hero-content">
+        <div class="hero-content" id="hero-content" style="position:relative;z-index:2;">
             <div class="hero-subtitle tech-font" data-en="&lt; Full-Cycle Digital Agency /&gt;" data-ru="&lt; Веб-студия полного цикла /&gt;">&lt; Веб-студия полного цикла /&gt;</div>
             <h1 class="heading-font typewriter" id="typewriter-text"></h1>
             <p class="hero-description" data-en="We build cutting-edge websites, boost search rankings, and create powerful advertising campaigns. Your digital success is our expertise." data-ru="Создаем современные сайты, продвигаем в поиске, настраиваем эффективную рекламу. Ваш успех в digital - наша экспертиза.">Создаем современные сайты, продвигаем в поиске, настраиваем эффективную рекламу. Ваш успех в digital - наша экспертиза.</p>
@@ -78,32 +213,33 @@
     </section>
 
     <section class="services animate-on-scroll" id="services">
-        <h2 class="section-title heading-font" data-en="Our Expertise" data-ru="Наша экспертиза">Наша экспертиза</h2>
-        <p class="section-subtitle" data-en="Comprehensive digital solutions powered by cutting-edge technology" data-ru="Комплексные цифровые решения на основе передовых технологий">Комплексные цифровые решения на основе передовых технологий</p>
-        
-        <div class="services-tabs">
+        <div class="services-content" id="services-content">
+            <h2 class="section-title heading-font" data-en="Our Expertise" data-ru="Наша экспертиза">Наша экспертиза</h2>
+            <p class="section-subtitle" data-en="Comprehensive digital solutions powered by cutting-edge technology" data-ru="Комплексные цифровые решения на основе передовых технологий">Комплексные цифровые решения на основе передовых технологий</p>
+            
+            <div class="services-tabs">
             <div class="service-tab active" data-service="web-dev">
-                <span class="service-tab-icon">🚀</span>
+                <span class="service-tab-icon"><i data-lucide="code"></i></span>
                 <h3 class="service-tab-title" data-en="Web Development" data-ru="Веб-разработка">Веб-разработка</h3>
             </div>
             <div class="service-tab" data-service="seo">
-                <span class="service-tab-icon">📈</span>
+                <span class="service-tab-icon"><i data-lucide="trending-up"></i></span>
                 <h3 class="service-tab-title" data-en="SEO Optimization" data-ru="SEO продвижение">SEO продвижение</h3>
             </div>
             <div class="service-tab" data-service="ads">
-                <span class="service-tab-icon">🎯</span>
+                <span class="service-tab-icon"><i data-lucide="target"></i></span>
                 <h3 class="service-tab-title" data-en="Digital Advertising" data-ru="Цифровая реклама">Цифровая реклама</h3>
             </div>
             <div class="service-tab" data-service="mobile">
-                <span class="service-tab-icon">📱</span>
+                <span class="service-tab-icon"><i data-lucide="smartphone"></i></span>
                 <h3 class="service-tab-title" data-en="Mobile Development" data-ru="Мобильная разработка">Мобильная разработка</h3>
             </div>
             <div class="service-tab" data-service="support">
-                <span class="service-tab-icon">⚡</span>
+                <span class="service-tab-icon"><i data-lucide="life-buoy"></i></span>
                 <h3 class="service-tab-title" data-en="Technical Support" data-ru="Техподдержка">Техподдержка</h3>
             </div>
             <div class="service-tab" data-service="design">
-                <span class="service-tab-icon">💎</span>
+                <span class="service-tab-icon"><i data-lucide="pen-tool"></i></span>
                 <h3 class="service-tab-title" data-en="UI/UX Design" data-ru="UI/UX Дизайн">UI/UX Дизайн</h3>
             </div>
         </div>
@@ -129,13 +265,13 @@
                         <span class="tech-tag">TypeScript</span>
                         <span class="tech-tag">Node.js</span>
                         <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">MySQL</span>
                     </div>
                 </div>
                 
                 <div class="service-pricing">
                     <div class="pricing-label" data-en="Starting from" data-ru="Стоимость от">Стоимость от</div>
-                    <div class="pricing-amount">$500</div>
+                    <div class="pricing-amount">$250</div>
                     <div class="pricing-period" data-en="per project" data-ru="за проект">за проект</div>
                     <div class="pricing-note" data-en="Final price depends on complexity and requirements" data-ru="Итоговая стоимость зависит от сложности и требований">Итоговая стоимость зависит от сложности и требований</div>
                     <button class="service-cta" data-en="Get Quote" data-ru="Получить расчет">Получить расчет</button>
@@ -187,7 +323,6 @@
                     <ul class="service-features">
                         <li data-en="Google Ads campaign management" data-ru="Управление кампаниями Google Ads">Управление кампаниями Google Ads</li>
                         <li data-en="Facebook & Instagram advertising" data-ru="Реклама в Facebook и Instagram">Реклама в Facebook и Instagram</li>
-                        <li data-en="TikTok and YouTube campaigns" data-ru="Кампании в TikTok и YouTube">Кампании в TikTok и YouTube</li>
                         <li data-en="Conversion tracking and optimization" data-ru="Отслеживание и оптимизация конверсий">Отслеживание и оптимизация конверсий</li>
                         <li data-en="A/B testing and creative optimization" data-ru="A/B тестирование и оптимизация креативов">A/B тестирование и оптимизация креативов</li>
                         <li data-en="Detailed performance reporting" data-ru="Детальная отчетность по эффективности">Детальная отчетность по эффективности</li>
@@ -229,8 +364,6 @@
                     </ul>
                     
                     <div class="service-tech">
-                        <span class="tech-tag">Swift</span>
-                        <span class="tech-tag">Kotlin</span>
                         <span class="tech-tag">React Native</span>
                         <span class="tech-tag">Flutter</span>
                         <span class="tech-tag">Firebase</span>
@@ -303,45 +436,89 @@
                         <span class="tech-tag">Adobe XD</span>
                         <span class="tech-tag">Sketch</span>
                         <span class="tech-tag">Prototyping</span>
-                        <span class="tech-tag">After Effects</span>
                         <span class="tech-tag">Principle</span>
                     </div>
                 </div>
                 
                 <div class="service-pricing">
                     <div class="pricing-label" data-en="Starting from" data-ru="Стоимость от">Стоимость от</div>
-                    <div class="pricing-amount">$800</div>
+                    <div class="pricing-amount">$200</div>
                     <div class="pricing-period" data-en="per project" data-ru="за проект">за проект</div>
                     <div class="pricing-note" data-en="Includes research, design, and prototyping" data-ru="Включает исследования, дизайн и прототипирование">Включает исследования, дизайн и прототипирование</div>
                     <button class="service-cta" data-en="Start Design Project" data-ru="Начать дизайн-проект">Начать дизайн-проект</button>
-                </div>
+             </div>
+         </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="why-us animate-on-scroll" id="why-us">
+        <h2 class="section-title heading-font" data-en="Why Choose WebLade?" data-ru="Почему выбирают WebLade?">Why Choose WebLade?</h2>
+        <p class="section-subtitle" data-en="We combine European expertise with competitive pricing to deliver exceptional results" data-ru="Мы сочетаем европейскую экспертизу с конкурентными ценами для достижения исключительных результатов">We combine European expertise with competitive pricing to deliver exceptional results</p>
+        
+        <div class="why-us-grid">
+            <div class="why-us-item animate-on-scroll slide-up">
+                <span class="why-us-icon"><i data-lucide="zap"></i></span>
+                <h3 data-en="7+ Years of International Experience" data-ru="7+ лет международного опыта">7+ Years of International Experience</h3>
+                <p data-en="We've successfully delivered projects for clients across Europe, North America, and Asia, building scalable solutions that drive real business growth." data-ru="Мы успешно реализовали проекты для клиентов по всей Европе, Северной Америке и Азии, создавая масштабируемые решения, которые обеспечивают реальный рост бизнеса.">We've successfully delivered projects for clients across Europe, North America, and Asia, building scalable solutions that drive real business growth.</p>
+            </div>
+            <div class="why-us-item animate-on-scroll slide-up" data-delay="200">
+                <span class="why-us-icon"><i data-lucide="users"></i></span>
+                <h3 data-en="European & CIS Specialists" data-ru="Специалисты из Европы и СНГ">European & CIS Specialists</h3>
+                <p data-en="Our team combines the best of both worlds: European quality standards with competitive pricing. You get world-class expertise without the premium price tag." data-ru="Наша команда сочетает лучшее из двух миров: европейские стандарты качества с конкурентными ценами. Вы получаете экспертизу мирового уровня без премиальной наценки.">Our team combines the best of both worlds: European quality standards with competitive pricing. You get world-class expertise without the premium price tag.</p>
+            </div>
+            <div class="why-us-item animate-on-scroll slide-up" data-delay="400">
+                <span class="why-us-icon"><i data-lucide="trending-up"></i></span>
+                <h3 data-en="30-50% Conversion Increase" data-ru="Рост конверсии на 30-50%">30-50% Conversion Increase</h3>
+                <p data-en="Our data-driven approach consistently delivers measurable results. We don't just build websites—we build conversion machines that pay for themselves." data-ru="Наш подход, основанный на данных, постоянно обеспечивает измеримые результаты. Мы не просто создаем сайты — мы создаем машины конверсии, которые окупают себя.">Our data-driven approach consistently delivers measurable results. We don't just build websites—we build conversion machines that pay for themselves.</p>
+            </div>
+            <div class="why-us-item animate-on-scroll slide-up" data-delay="600">
+                <span class="why-us-icon"><i data-lucide="settings"></i></span>
+                <h3 data-en="Agile Development Process" data-ru="Agile процесс разработки">Agile Development Process</h3>
+                <p data-en="We work in sprints, providing regular updates and allowing for easy scaling. Your project evolves with your business needs, not against them." data-ru="Мы работаем спринтами, предоставляя регулярные обновления и позволяя легко масштабировать. Ваш проект развивается вместе с потребностями вашего бизнеса, а не против них.">We work in sprints, providing regular updates and allowing for easy scaling. Your project evolves with your business needs, not against them.</p>
+            </div>
+            <div class="why-us-item animate-on-scroll slide-up" data-delay="800">
+                <span class="why-us-icon"><i data-lucide="message-circle"></i></span>
+                <h3 data-en="24/7 Support & Transparency" data-ru="Поддержка 24/7 и прозрачность">24/7 Support & Transparency</h3>
+                <p data-en="Round-the-clock support with complete transparency. You always know what's happening with your project through our detailed reporting system." data-ru="Круглосуточная поддержка с полной прозрачностью. Вы всегда знаете, что происходит с вашим проектом через нашу детальную систему отчетности.">Round-the-clock support with complete transparency. You always know what's happening with your project through our detailed reporting system.</p>
+            </div>
+            <div class="why-us-item animate-on-scroll slide-up" data-delay="1000">
+                <span class="why-us-icon"><i data-lucide="rocket"></i></span>
+                <h3 data-en="Lightning-Fast Delivery" data-ru="Молниеносная доставка">Lightning-Fast Delivery</h3>
+                <p data-en="We don't believe in endless development cycles. Our streamlined process gets your project live faster, so you can start seeing ROI sooner." data-ru="Мы не верим в бесконечные циклы разработки. Наш оптимизированный процесс быстрее запускает ваш проект, чтобы вы могли начать получать ROI раньше.">We don't believe in endless development cycles. Our streamlined process gets your project live faster, so you can start seeing ROI sooner.</p>
             </div>
         </div>
     </section>
 
     <section class="portfolio animate-on-scroll" id="portfolio">
-        <h2 class="section-title heading-font" data-en="Featured Projects" data-ru="Избранные проекты">Избранные проекты</h2>
-        <p class="section-subtitle" data-en="Showcasing our latest work and client success stories" data-ru="Демонстрируем наши последние работы и истории успеха клиентов">Демонстрируем наши последние работы и истории успеха клиентов</p>
-        
-        <div class="portfolio-grid">
-            <div class="portfolio-item animate-on-scroll slide-left">
-              <a href="https://www.warstriking.com/" target="_blank" class="portfolio-link">
-                <img src="img/war_room.png" alt="Warstriking Platform" class="portfolio-img">
-                <div class="portfolio-overlay">
-                    <h3 data-en="Warstriking Platform" data-ru="Warstriking платформа">Warstriking Platform</h3>
-                    <p data-en="Warstriking — stylish platform to buy sportswear and book workouts, wrapped in smooth UI and animations" data-ru="Полнофункциональный интернет-магазин с интеграцией платежей и управлением товарами">Warstriking — stylish platform to buy sportswear and book workouts, wrapped in smooth UI and animations</p>
-                    <div class="portfolio-tags">
-                        <span class="portfolio-tag">Sportswear</span>
-                        <span class="portfolio-tag">Booking</span>
-                        <span class="portfolio-tag">UX/UI</span>
-                    </div>
-                </div>
-              </a>
-            </div>
+        <div class="portfolio-content" id="portfolio-content">
+            <h2 class="section-title heading-font" data-en="Featured Projects" data-ru="Избранные проекты">Избранные проекты</h2>
+            <p class="section-subtitle" data-en="Showcasing our latest work and client success stories" data-ru="Демонстрируем наши последние работы и истории успеха клиентов">Демонстрируем наши последние работы и истории успеха клиентов</p>
+            
+            <div class="portfolio-grid">
+                          <div class="portfolio-item animate-on-scroll slide-left">
+                <div class="portfolio-hover-overlay"></div>
+                <a href="#" class="portfolio-link" data-project="warstriking">
+                  <img src="img/war_room.png" alt="Warstriking Platform" class="portfolio-img" loading="lazy">
+                  <div class="portfolio-overlay" style="z-index:3;position:relative;">
+                      <h3 data-en="Warstriking Platform" data-ru="Warstriking платформа">Warstriking Platform</h3>
+                      <p data-en="E-commerce platform with 200% conversion increase" data-ru="Платформа электронной коммерции с увеличением конверсии на 200%">E-commerce platform with 200% conversion increase</p>
+                      <div class="portfolio-tags">
+                          <span class="portfolio-tag">E-commerce</span>
+                          <span class="portfolio-tag">Conversion</span>
+                          <span class="portfolio-tag">UX/UI</span>
+                      </div>
+                      <div class="portfolio-cta">
+                          <span data-en="View Case Study" data-ru="Посмотреть кейс">View Case Study</span>
+                      </div>
+                  </div>
+                </a>
+              </div>
             
             <div class="portfolio-item animate-on-scroll scale-up">
-              <a href="https://webladeofficial.github.io/shimmer/" target="_blank" class="portfolio-link">
-                <img src="img/luna.png" alt="Luna" class="portfolio-img">
+              <div class="portfolio-hover-overlay"></div>
+              <a href="https://webladeofficial.github.io/shimmer/" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+                <img src="img/luna.png" alt="Luna" class="portfolio-img" loading="lazy">
                 <div class="portfolio-overlay">
                     <h3 data-en="Luna Startup Landing" data-ru="Корпоративный сайт">Luna Startup Landing</h3>
                     <p data-en="High-converting landing page for AI-powered productivity startup" data-ru="Многоязычный сайт производственной компании с интеграцией CMS">High-converting landing page for AI-powered productivity startup</p>
@@ -356,8 +533,9 @@
             </div>
             
             <div class="portfolio-item animate-on-scroll slide-right">
-              <a href="https://webladeofficial.github.io/hyperview/" target="_blank" class="portfolio-link">
-                <img src="img/hyper.png" alt="SaaS" class="portfolio-img">
+              <div class="portfolio-hover-overlay"></div>
+              <a href="https://webladeofficial.github.io/hyperview/" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+                <img src="img/hyper.png" alt="SaaS" class="portfolio-img" loading="lazy">
                 <div class="portfolio-overlay">
                     <h3 data-en="HyperEdge B2B SaaS Dashboard" data-ru="SaaS приложение">HyperEdge B2B SaaS Dashboard</h3>
                     <p data-en="Comprehensive analytics dashboard for enterprise data management" data-ru="Веб-приложение для управления проектами с функциями совместной работы в реальном времени">Comprehensive analytics dashboard for enterprise data management</p>
@@ -372,8 +550,9 @@
             </div>
             
             <div class="portfolio-item animate-on-scroll slide-left">
-              <a href="https://webladeofficial.github.io/apexNDA/" target="_blank" class="portfolio-link">
-                <img src="img/apex.png" alt="Apex Creative Agency" class="portfolio-img">
+              <div class="portfolio-hover-overlay"></div>
+              <a href="https://webladeofficial.github.io/apexNDA/" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+                <img src="img/apex.png" alt="Apex Creative Agency" class="portfolio-img" loading="lazy">
                 <div class="portfolio-overlay">
                     <h3 data-en="Apex Creative Agency" data-ru="Лендинг страница">Apex Creative Agency</h3>
                     <p data-en="Bold, award-winning portfolio site for creative agency" data-ru="Высококонверсионная посадочная страница с продвинутыми анимациями и A/B тестированием">Bold, award-winning portfolio site for creative agency</p>
@@ -388,8 +567,9 @@
             </div>
             
             <div class="portfolio-item animate-on-scroll slide-left">
-                <a href="https://webladeofficial.github.io/Quantum/" target="_blank" class="portfolio-link">
-                  <img src="img/quantum.png" alt="Quantum Finance App" class="portfolio-img">
+                <div class="portfolio-hover-overlay"></div>
+                <a href="https://webladeofficial.github.io/Quantum/" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+                  <img src="img/quantum.png" alt="Quantum Finance App" class="portfolio-img" loading="lazy">
                   <div class="portfolio-overlay">
                       <h3 data-en="Quantum Finance App" data-ru="Лендинг страница">Quantum Finance App</h3>
                       <p data-en="Mobile-first financial management platform with real-time analytics" data-ru="Высококонверсионная посадочная страница с продвинутыми анимациями и A/B тестированием">Mobile-first financial management platform with real-time analytics</p>
@@ -404,8 +584,9 @@
               </div>
 
               <div class="portfolio-item animate-on-scroll slide-left">
-                <a href="https://webladeofficial.github.io/orion/" target="_blank" class="portfolio-link">
-                  <img src="img/orion.png" alt="Лендинг страница" class="portfolio-img">
+                <div class="portfolio-hover-overlay"></div>
+                <a href="https://webladeofficial.github.io/orion/" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+                  <img src="img/orion.png" alt="Лендинг страница" class="portfolio-img" loading="lazy">
                   <div class="portfolio-overlay">
                       <h3 data-en="Orion E-Commerce Platform" data-ru="Лендинг страница">Orion E-Commerce Platform</h3>
                       <p data-en="Modern e-commerce solution with advanced filtering and seamless checkout experience" data-ru="Высококонверсионная посадочная страница с продвинутыми анимациями и A/B тестированием">Modern e-commerce solution with advanced filtering and seamless checkout experience</p>
@@ -417,29 +598,132 @@
                   </div>
                 </a>
               </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials animate-on-scroll" id="testimonials">
+            <h2 class="section-title heading-font" data-en="What Our Clients Say" data-ru="Что говорят наши клиенты">Что говорят наши клиенты</h2>
+            <p class="section-subtitle" data-en="Real results from real clients. Here's what they have to say about working with WebLade." data-ru="Реальные результаты от реальных клиентов. Вот что они говорят о работе с WebLade.">Реальные результаты от реальных клиентов. Вот что они говорят о работе с WebLade.</p>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial animate-on-scroll slide-up">
+                <div class="testimonial-content">
+                    <div class="testimonial-quote">"</div>
+                    <p data-en="The WebLade team built us a blazing-fast landing page that doubled our conversion rate. Their attention to detail and data-driven approach made all the difference. Highly recommend!" data-ru="Команда WebLade создала нам молниеносно быструю посадочную страницу, которая удвоила нашу конверсию. Их внимание к деталям и подход, основанный на данных, имели решающее значение. Очень рекомендую!">The WebLade team built us a blazing-fast landing page that doubled our conversion rate. Their attention to detail and data-driven approach made all the difference. Highly recommend!</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">
+                        <img src="img/client1.jpg" alt="John Smith" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMzAiIGZpbGw9IiM0MTY5RTEiLz4KPHN2ZyB4PSIxNSIgeT0iMTUiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0xMiAxMkMxNC4yMSAxMiAxNiAxMC4yMSAxNiA4QzE2IDUuNzkgMTQuMjEgNCAxMiA0QzkuNzkgNCA4IDUuNzkgOCA4QzggMTAuMjEgOS43OSAxMiAxMiAxMlpNMTIgMTRDOS4zMyAxNCA0IDE1LjM0IDQgMThWMjBIMjBWMThDMTkgMTUuMzQgMTQuNjcgMTQgMTIgMTRaIi8+Cjwvc3ZnPgo8L3N2Zz4K'">
+                    </div>
+                    <div class="testimonial-info">
+                        <h4 data-en="John Smith" data-ru="Джон Смит">John Smith</h4>
+                        <span data-en="Founder of LunaTech" data-ru="Основатель LunaTech">Founder of LunaTech</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial animate-on-scroll slide-up" data-delay="200">
+                <div class="testimonial-content">
+                    <div class="testimonial-quote">"</div>
+                    <p data-en="Working with WebLade was a game-changer for our e-commerce platform. They increased our organic traffic by 150% and improved our user experience significantly. The ROI was incredible!" data-ru="Работа с WebLade стала переломным моментом для нашей платформы электронной коммерции. Они увеличили наш органический трафик на 150% и значительно улучшили пользовательский опыт. ROI был невероятным!">Working with WebLade was a game-changer for our e-commerce platform. They increased our organic traffic by 150% and improved our user experience significantly. The ROI was incredible!</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">
+                        <img src="img/client2.jpg" alt="Sarah Johnson" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMzAiIGZpbGw9IiNENEFGMzciLz4KPHN2ZyB4PSIxNSIgeT0iMTUiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0xMiAxMkMxNC4yMSAxMiAxNiAxMC4yMSAxNiA4QzE2IDUuNzkgMTQuMjEgNCAxMiA0QzkuNzkgNCA4IDUuNzkgOCA4QzggMTAuMjEgOS43OSAxMiAxMiAxMlpNMTIgMTRDOS4zMyAxNCA0IDE1LjM0IDQgMThWMjBIMjBWMThDMTkgMTUuMzQgMTQuNjcgMTQgMTIgMTRaIi8+Cjwvc3ZnPgo8L3N2Zz4K'">
+                    </div>
+                    <div class="testimonial-info">
+                        <h4 data-en="Sarah Johnson" data-ru="Сара Джонсон">Sarah Johnson</h4>
+                        <span data-en="CEO of Quantum Finance" data-ru="CEO Quantum Finance">CEO of Quantum Finance</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial animate-on-scroll slide-up" data-delay="400">
+                <div class="testimonial-content">
+                    <div class="testimonial-quote">"</div>
+                    <p data-en="The team's expertise in both development and marketing is rare. They didn't just build us a website—they built us a lead generation machine. Our sales increased by 40% in the first quarter." data-ru="Экспертиза команды как в разработке, так и в маркетинге встречается редко. Они не просто создали нам сайт — они создали машину генерации лидов. Наши продажи выросли на 40% в первом квартале.">The team's expertise in both development and marketing is rare. They didn't just build us a website—they built us a lead generation machine. Our sales increased by 40% in the first quarter.</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">
+                        <img src="img/client3.jpg" alt="Michael Chen" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMzAiIGZpbGw9IiNGRkQ3MDAiLz4KPHN2ZyB4PSIxNSIgeT0iMTUiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0xMiAxMkMxNC4yMSAxMiAxNiAxMC4yMSAxNiA4QzE2IDUuNzkgMTQuMjEgNCAxMiA0QzkuNzkgNCA4IDUuNzkgOCA4QzggMTAuMjEgOS43OSAxMiAxMiAxMlpNMTIgMTRDOS4zMyAxNCA0IDE1LjM0IDQgMThWMjBIMjBWMThDMTkgMTUuMzQgMTQuNjcgMTQgMTIgMTRaIi8+Cjwvc3ZnPgo8L3N2Zz4K'">
+                    </div>
+                    <div class="testimonial-info">
+                        <h4 data-en="Michael Chen" data-ru="Майкл Чен">Michael Chen</h4>
+                        <span data-en="Marketing Director at Orion Tech" data-ru="Директор по маркетингу Orion Tech">Marketing Director at Orion Tech</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner animate-on-scroll" id="cta-banner">
+        <div class="cta-banner-content">
+            <h2 class="cta-banner-title" data-en="Ready to grow your business online?" data-ru="Готовы развивать свой бизнес онлайн?">Готовы развивать свой бизнес онлайн?</h2>
+            <p class="cta-banner-subtitle" data-en="Let's build something amazing together. Schedule a free consultation today and see how we can transform your digital presence." data-ru="Давайте создадим что-то удивительное вместе. Запланируйте бесплатную консультацию сегодня и узнайте, как мы можем трансформировать ваше цифровое присутствие.">Давайте создадим что-то удивительное вместе. Запланируйте бесплатную консультацию сегодня и узнайте, как мы можем трансформировать ваше цифровое присутствие.</p>
+            <div class="cta-banner-buttons">
+                <a href="#contact" class="cta-button primary" data-en="Book a Free Call" data-ru="Забронировать бесплатный звонок">Забронировать бесплатный звонок</a>
+                <a href="#portfolio" class="cta-button secondary" data-en="View Our Work" data-ru="Посмотреть наши работы">Посмотреть наши работы</a>
+            </div>
         </div>
     </section>
 
     <section class="contact animate-on-scroll" id="contact">
-        <h2 class="section-title heading-font" data-en="Let's Start Collaboration" data-ru="Начнем сотрудничество">Начнем сотрудничество</h2>
-        <p class="section-subtitle" data-en="Ready to transform your digital presence? Let's discuss your project" data-ru="Готовы трансформировать ваше цифровое присутствие? Давайте обсудим ваш проект">Готовы трансформировать ваше цифровое присутствие? Давайте обсудим ваш проект</p>
-        
-        <div class="contact-form">
-            <div class="form-row">
-                <div class="form-group">
-                    <input type="text" name="name" placeholder=" " required>
-                    <label data-en="Your Name" data-ru="Ваше имя">Ваше имя</label>
+        <div class="contact-bg" style="position:absolute;inset:0;z-index:0;overflow:hidden;">
+            <img src="img/contacts_sec.png" alt="Контакты фон" style="width:100%;height:100%;object-fit:cover;filter:blur(8px) brightness(0.7);position:absolute;inset:0;z-index:0;">
+            <div style="position:absolute;inset:0;background:linear-gradient(120deg,rgba(212,175,55,0.25),rgba(65,105,225,0.25),rgba(255,255,255,0.10));z-index:1;"></div>
+        </div>
+        <div class="contact-content" id="contact-content" style="position:relative;z-index:2;">
+            <h2 class="section-title heading-font" data-en="Let's Start Collaboration" data-ru="Начнем сотрудничество">Начнем сотрудничество</h2>
+            <p class="section-subtitle" data-en="Ready to transform your digital presence? Let's discuss your project" data-ru="Готовы трансформировать ваше цифровое присутствие? Давайте обсудим ваш проект">Готовы трансформировать ваше цифровое присутствие? Давайте обсудим ваш проект</p>
+            
+            <div class="contact-form">
+                <div class="form-header">
+                    <div class="form-header-icon">
+                        <i data-lucide="message-circle"></i>
+                    </div>
+                    <h3 data-en="Let's Start Your Project" data-ru="Начнем ваш проект">Начнем ваш проект</h3>
+                    <p data-en="Tell us about your idea and we'll create something amazing together" data-ru="Расскажите о вашей идее, и мы создадим что-то потрясающее вместе">Расскажите о вашей идее, и мы создадим что-то потрясающее вместе</p>
                 </div>
-                <div class="form-group">
-                    <input type="text" name="contact" placeholder=" " required>
-                    <label data-en="Telegram or WhatsApp" data-ru="Telegram или WhatsApp">Telegram или WhatsApp</label>
-                </div>
+                
+                <form class="modern-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <i data-lucide="user" class="input-icon"></i>
+                                <input type="text" name="name" id="name" required>
+                                <label for="name" data-en="Your Name" data-ru="Ваше имя">Ваше имя</label>
+                                <div class="input-border"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <i data-lucide="smartphone" class="input-icon"></i>
+                                <input type="text" name="contact" id="contact" required>
+                                <label for="contact" data-en="Telegram or WhatsApp" data-ru="Telegram или WhatsApp">Telegram или WhatsApp</label>
+                                <div class="input-border"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="input-wrapper input-wrapper-textarea">
+                            <i data-lucide="file-text" class="input-icon"></i>
+                            <textarea name="message" id="message" required></textarea>
+                            <label for="message" data-en="Tell us about your project" data-ru="Расскажите о вашем проекте">Расскажите о вашем проекте</label>
+                            <div class="input-border"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text" data-en="Send Request" data-ru="Отправить заявку">Отправить заявку</span>
+                            <i data-lucide="send" class="btn-icon"></i>
+                            <div class="btn-glow"></div>
+                        </button>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <textarea name="message" placeholder=" " required></textarea>
-                <label data-en="Tell us about your project" data-ru="Расскажите о вашем проекте">Расскажите о вашем проекте</label>
-            </div>
-            <button type="submit" class="cta-button" data-en="Send Request →" data-ru="Отправить заявку →">Отправить заявку →</button>
         </div>
         
         <!-- Кастомные уведомления -->
@@ -467,21 +751,125 @@
             </div>
             <div class="footer-section">
                 <h3 data-en="Contact" data-ru="Контакты">Контакты</h3>
-                <p>Email: hello@webllade.com</p>
-                <p data-en="Phone: +380 XX XXX XX XX" data-ru="Телефон: +380 XX XXX XX XX">Телефон: +380 XX XXX XX XX</p>
-                <p data-en="Kyiv, Ukraine" data-ru="Киев, Украина">Киев, Украина</p>
                 <div class="social-links">
-                    <a href="#" title="Facebook">📘</a>
-                    <a href="#" title="Instagram">📷</a>
-                    <a href="#" title="LinkedIn">💼</a>
-                    <a href="#" title="GitHub">🐙</a>
+                    <a href="https://instagram.com/weblade_official" title="Instagram" rel="nofollow noopener" aria-label="Instagram">
+                        <i data-lucide="instagram"></i>
+                    </a>
+                    <a href="https://t.me/tptptpss" title="Telegram" rel="nofollow noopener" aria-label="Telegram">
+                        <i data-lucide="send"></i>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="footer-bottom">
+            <p data-en="&copy; 2025 WebLade. All rights reserved. " data-ru="&copy; 2025 WebLade. Все права защищены. | Политика конфиденциальности | Условия использования">&copy; 2025 WebLade. Все права защищены. </p>
+        </div>
+    </footer>
+
+    <!-- Case Study Modal -->
+    <div class="case-study-modal" id="case-study-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">×</button>
+            
+            <div class="case-study-content">
+             <div class="case-study-header">
+                    <img src="img/war_room.png" alt="Warstriking Platform" class="case-study-image" loading="lazy">
+                    <div class="case-study-info">
+                        <h2 data-en="Warstriking Platform" data-ru="Warstriking платформа">Warstriking платформа</h2>
+                        <p class="case-study-subtitle" data-en="E-commerce & Fitness Booking Platform" data-ru="Платформа электронной коммерции и фитнес-бронирования">Платформа электронной коммерции и фитнес-бронирования</p>
+                        <div class="case-study-stats">
+                            <div class="stat">
+                                <span class="stat-number">200%</span>
+                                <span class="stat-label" data-en="Conversion Increase" data-ru="Рост конверсии">Conversion Increase</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">150%</span>
+                                <span class="stat-label" data-en="Revenue Growth" data-ru="Рост выручки">Revenue Growth</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">3</span>
+                                <span class="stat-label" data-en="Months Delivery" data-ru="Месяцев разработки">Months Delivery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="case-study-sections">
+                    <div class="case-study-section">
+                        <h3 data-en="Project Challenge" data-ru="Задача проекта">Project Challenge</h3>
+                        <p data-en="Warstriking needed a modern e-commerce platform that could handle both sportswear sales and fitness class bookings. The existing solution was outdated, slow, and had poor user experience, resulting in low conversion rates and customer retention." data-ru="Warstriking нужна была современная платформа электронной коммерции, которая могла бы обрабатывать как продажи спортивной одежды, так и бронирование фитнес-классов. Существующее решение было устаревшим, медленным и имело плохой пользовательский опыт, что приводило к низким показателям конверсии и удержания клиентов.">Warstriking needed a modern e-commerce platform that could handle both sportswear sales and fitness class bookings. The existing solution was outdated, slow, and had poor user experience, resulting in low conversion rates and customer retention.</p>
+                    </div>
+                    
+                    <div class="case-study-section">
+                        <h3 data-en="Our Solution" data-ru="Наше решение">Our Solution</h3>
+                        <ul>
+                            <li data-en="Built a responsive React-based e-commerce platform with Next.js for optimal performance" data-ru="Создали адаптивную платформу электронной коммерции на React с Next.js для оптимальной производительности">Built a responsive React-based e-commerce platform with Next.js for optimal performance</li>
+                            <li data-en="Integrated advanced booking system with real-time availability and payment processing" data-ru="Интегрировали продвинутую систему бронирования с реальным временем доступности и обработкой платежей">Integrated advanced booking system with real-time availability and payment processing</li>
+                            <li data-en="Implemented SEO optimization and content management system for easy updates" data-ru="Внедрили SEO-оптимизацию и систему управления контентом для легких обновлений">Implemented SEO optimization and content management system for easy updates</li>
+                            <li data-en="Created personalized user experience with AI-powered recommendations" data-ru="Создали персонализированный пользовательский опыт с рекомендациями на базе ИИ">Created personalized user experience with AI-powered recommendations</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="case-study-section">
+                        <h3 data-en="Key Features Delivered" data-ru="Ключевые функции">Key Features Delivered</h3>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <span class="feature-icon">🛒</span>
+                                <h4 data-en="Advanced E-commerce" data-ru="Продвинутая электронная коммерция">Advanced E-commerce</h4>
+                                <p data-en="Product catalog, shopping cart, secure payments, order tracking" data-ru="Каталог товаров, корзина, безопасные платежи, отслеживание заказов">Product catalog, shopping cart, secure payments, order tracking</p>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">📅</span>
+                                <h4 data-en="Booking System" data-ru="Система бронирования">Booking System</h4>
+                                <p data-en="Real-time availability, instant booking, payment integration" data-ru="Доступность в реальном времени, мгновенное бронирование, интеграция платежей">Real-time availability, instant booking, payment integration</p>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">📱</span>
+                                <h4 data-en="Mobile-First Design" data-ru="Мобильный дизайн">Mobile-First Design</h4>
+                                <p data-en="Responsive design optimized for all devices and screen sizes" data-ru="Адаптивный дизайн, оптимизированный для всех устройств и размеров экранов">Responsive design optimized for all devices and screen sizes</p>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">⚡</span>
+                                <h4 data-en="Performance Optimization" data-ru="Оптимизация производительности">Performance Optimization</h4>
+                                <p data-en="Lightning-fast loading times and smooth user experience" data-ru="Молниеносные времена загрузки и плавный пользовательский опыт">Lightning-fast loading times and smooth user experience</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="case-study-section">
+                        <h3 data-en="Results & Impact" data-ru="Результаты и влияние">Results & Impact</h3>
+                        <div class="results-grid">
+                            <div class="result-item">
+                                <span class="result-number">200%</span>
+                                <span class="result-label" data-en="Conversion Rate Increase" data-ru="Рост конверсии">Conversion Rate Increase</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-number">150%</span>
+                                <span class="result-label" data-en="Revenue Growth" data-ru="Рост выручки">Revenue Growth</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-number">85%</span>
+                                <span class="result-label" data-en="Faster Page Load" data-ru="Быстрее загрузка страниц">Faster Page Load</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-number">300%</span>
+                                <span class="result-label" data-en="Mobile Traffic Increase" data-ru="Рост мобильного трафика">Mobile Traffic Increase</span>
+                            </div>
+                        </div>
+                        <p class="case-study-quote" data-en="\"The new platform transformed our business. We saw immediate improvements in user engagement and sales. The booking system alone increased our class attendance by 40%.\"" data-ru="\"Новая платформа трансформировала наш бизнес. Мы увидели немедленные улучшения в вовлечении пользователей и продажах. Только система бронирования увеличила посещаемость наших классов на 40%.\"">«Новая платформа трансформировала наш бизнес. Мы увидели немедленные улучшения в вовлечении пользователей и продажах. Только система бронирования увеличила посещаемость наших классов на 40%.»</p>
+                        <p class="case-study-author" data-en="— Alex Rodriguez, CEO of Warstriking" data-ru="— Алекс Родригес, CEO Warstriking">— Алекс Родригес, CEO Warstriking</p>
+                    </div>
+                </div>
+                
+                <div class="case-study-cta">
+                    <a href="#contact" class="cta-button" data-en="Start Your Project" data-ru="Начать ваш проект">Начать ваш проект</a>
+                    <a href="#" class="cta-button secondary" data-en="View Live Site" data-ru="Посмотреть сайт">Посмотреть сайт</a>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p data-en="&copy; 2025 WebLade. All rights reserved. | Privacy Policy | Terms of Service" data-ru="&copy; 2025 WebLade. Все права защищены. | Политика конфиденциальности | Условия использования">&copy; 2025 WebLade. Все права защищены. | Политика конфиденциальности | Условия использования</p>
-        </div>
-    </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
