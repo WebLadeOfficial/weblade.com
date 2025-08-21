@@ -21,13 +21,11 @@ const translations = {
     }
 };
 
-// Current language
 let currentLang = 'en';
 let typewriter;
 
 
 
-// Typewriter effect class - оптимизированная версия
 class Typewriter {
     constructor(element, texts, options = {}) {
         this.element = element;
@@ -55,10 +53,8 @@ class Typewriter {
             this.charIndex++;
         }
 
-        // Создаем HTML с курсором в конце текста
         this.element.innerHTML = this.currentText + '<span class="typewriter-cursor">|</span>';
         
-        // Убеждаемся, что курсор находится в правильной позиции
         const cursor = this.element.querySelector('.typewriter-cursor');
         if (cursor) {
             cursor.style.display = 'inline';
@@ -67,7 +63,6 @@ class Typewriter {
             cursor.style.verticalAlign = 'baseline';
             cursor.style.lineHeight = 'inherit';
             
-            // Дополнительная проверка для правильного позиционирования при переносе строк
             setTimeout(() => {
                 if (cursor.parentNode) {
                     cursor.style.display = 'inline';
@@ -97,12 +92,10 @@ class Typewriter {
         this.isDeleting = false;
         this.charIndex = 0;
         
-        // Остановить текущий цикл
         if (this.timeoutId) {
             clearTimeout(this.timeoutId);
         }
         
-        // Начать новый цикл
         this.start();
     }
 
@@ -119,7 +112,6 @@ class Typewriter {
     }
 }
 
-// Initialize typewriter
 function initTypewriter() {
     const typewriterElement = document.getElementById('typewriter-text');
     const texts = translations[currentLang].typewriterTexts;
@@ -136,11 +128,9 @@ function initTypewriter() {
     }
 }
 
-// Language switching
 function switchLanguage(lang) {
     currentLang = lang;
     
-    // Update active language button
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.remove('active');
         if (btn.dataset.lang === lang) {
@@ -148,7 +138,6 @@ function switchLanguage(lang) {
         }
     });
 
-    // Update all translatable elements
     document.querySelectorAll('[data-en][data-ru]').forEach(element => {
         const translation = element.getAttribute(`data-${lang}`);
         if (translation) {
@@ -156,36 +145,30 @@ function switchLanguage(lang) {
         }
     });
 
-    // Update typewriter texts
     initTypewriter();
 
-    // Update HTML lang attribute
     document.documentElement.lang = lang;
 }
 
-// Оптимизированная функция создания частиц с адаптивностью
 function createParticles() {
     const container = document.getElementById('particles');
     
-    // Адаптивное количество частиц в зависимости от размера экрана
     const isMobile = window.innerWidth <= 768;
     const isTablet = window.innerWidth <= 1024 && window.innerWidth > 768;
     
-    let particleCount = 40; // Desktop default
+    let particleCount = 40;
     if (isMobile) {
-        particleCount = 15; // Меньше частиц на мобильных
+        particleCount = 15;
     } else if (isTablet) {
-        particleCount = 25; // Среднее количество на планшетах
+        particleCount = 25;
     }
     
-    // Clear existing particles
     container.innerHTML = '';
     
     for (let i = 0; i < particleCount; i++) {
-        const isCode = Math.random() < (isMobile ? 0.1 : 0.3); // Меньше кодовых частиц на мобильных
+        const isCode = Math.random() < (isMobile ? 0.1 : 0.3);
         
         if (isCode) {
-            // Create code particles
             const codeParticle = document.createElement('div');
             codeParticle.className = 'code-particle';
             const codeSnippets = [
@@ -201,7 +184,6 @@ function createParticles() {
             codeParticle.style.fontSize = (Math.random() * 3 + 8) + 'px';
             container.appendChild(codeParticle);
         } else {
-            // Create regular particles
             const particle = document.createElement('div');
             particle.className = 'particle';
             particle.style.left = Math.random() * 100 + '%';
@@ -215,12 +197,10 @@ function createParticles() {
     }
 }
 
-// Оптимизированный parallax эффект с адаптивностью
 function initParallaxEffect() {
     let ticking = false;
     let lastScrollY = 0;
     
-    // Отключаем parallax на мобильных устройствах для производительности
     const isMobile = window.innerWidth <= 768;
     if (isMobile) {
         return;
@@ -229,7 +209,6 @@ function initParallaxEffect() {
     function updateParallax() {
         const scrolled = window.pageYOffset;
         
-        // Оптимизация: обновляем только при значительном изменении
         if (Math.abs(scrolled - lastScrollY) < 5) {
             ticking = false;
             return;
@@ -241,7 +220,6 @@ function initParallaxEffect() {
         const rate2 = scrolled * -0.4;
         const rate3 = scrolled * -0.15;
         
-        // Update parallax shapes
         const shape1 = document.querySelector('.parallax-shape-1');
         const shape2 = document.querySelector('.parallax-shape-2');
         const shape3 = document.querySelector('.parallax-shape-3');
@@ -261,12 +239,10 @@ function initParallaxEffect() {
     }, { passive: true });
 }
 
-// Исправленная функция табов
 function initServiceTabs() {
     const tabs = document.querySelectorAll('.service-tab');
     const contents = document.querySelectorAll('.service-content');
     
-    // Показываем первый контент по умолчанию
     contents.forEach((content, index) => {
         if (index === 0) {
             content.style.display = 'block';
@@ -281,22 +257,18 @@ function initServiceTabs() {
         tab.addEventListener('click', function() {
             const targetService = this.dataset.service;
             
-            // Remove active class from all tabs and contents
             tabs.forEach(t => t.classList.remove('active'));
             contents.forEach(c => {
                 c.classList.remove('active');
                 c.style.display = 'none';
             });
             
-            // Add active class to clicked tab
             this.classList.add('active');
             
-            // Show target content
             const targetContent = document.querySelector(`[data-content="${targetService}"]`);
             if (targetContent) {
                 targetContent.style.display = 'block';
                 setTimeout(() => targetContent.classList.add('active'), 10);
-                // Добавлено: плавный скролл к контенту таба на мобилках
                 if (window.innerWidth <= 768) {
                     targetContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
@@ -305,7 +277,6 @@ function initServiceTabs() {
     });
 }
 
-// Оптимизированные scroll animations
 function initScrollAnimationsUnified() {
     const observerOptions = {
         threshold: 0.1,
@@ -326,7 +297,6 @@ function initScrollAnimationsUnified() {
 
 // (removed legacy initSmoothScrolling – enhanced version is defined later)
 
-// Оптимизированный navbar scroll effect
 function initNavbarScroll() {
     let lastScrollY = window.scrollY;
     let ticking = false;
@@ -364,31 +334,21 @@ function initNavbarScroll() {
     }, { passive: true });
 }
 
-// Enhanced form handling
 function initFormHandling() {
     const form = document.querySelector('.modern-form');
     if (form) {
-        console.log('Form found:', form);
-        
-        // Добавляем обработчик события submit
         form.addEventListener('submit', handleFormSubmit);
         
-        // Валидация в реальном времени
         initRealTimeValidation(form);
         
-        // Обработчик закрытия уведомлений
         initNotificationHandlers();
-    } else {
-        console.error('Contact form not found!');
     }
 }
 
-// Валидация в реальном времени
 function initRealTimeValidation(form) {
     const inputs = form.querySelectorAll('input, textarea');
     
     inputs.forEach(input => {
-        // На вводе не показываем красный/зеленый бордер — только убираем прошлые стейты
         input.addEventListener('input', function() {
             this.classList.remove('valid', 'invalid');
         });
@@ -399,12 +359,10 @@ function initRealTimeValidation(form) {
     });
 }
 
-// Валидация отдельного поля
 function validateField(field) {
     const value = field.value.trim();
     const fieldName = field.name;
     
-    // Удаляем предыдущие классы
     field.classList.remove('valid', 'invalid');
     
     if (!value) {
@@ -412,13 +370,11 @@ function validateField(field) {
         return false;
     }
     
-    // Дополнительная валидация для разных полей
     let isValid = true;
     
     if (fieldName === 'name') {
         isValid = value.length >= 2;
     } else if (fieldName === 'contact') {
-        // Проверяем что это Telegram или WhatsApp
         isValid = value.includes('@') || value.includes('+') || value.includes('telegram') || value.includes('whatsapp');
     } else if (fieldName === 'message') {
         isValid = value.length >= 10;
@@ -433,7 +389,6 @@ function validateField(field) {
     return isValid;
 }
 
-// Инициализация обработчиков уведомлений
 function initNotificationHandlers() {
     const notification = document.getElementById('notification');
     const closeBtn = notification?.querySelector('.notification-close');
@@ -445,7 +400,6 @@ function initNotificationHandlers() {
     }
 }
 
-// Показать уведомление
 function showNotification(message, type = 'success') {
     const notification = document.getElementById('notification');
     const textElement = notification?.querySelector('.notification-text');
@@ -455,14 +409,12 @@ function showNotification(message, type = 'success') {
         textElement.textContent = message;
         notification.classList.add('show');
         
-        // Автоматически скрыть через 5 секунд
         setTimeout(() => {
             hideNotification();
         }, 5000);
     }
 }
 
-// Скрыть уведомление
 function hideNotification() {
     const notification = document.getElementById('notification');
     if (notification) {
@@ -470,95 +422,66 @@ function hideNotification() {
     }
 }
 
-// Очистить форму
 function clearForm(form) {
-    // Очищаем все поля ввода
     form.querySelectorAll('input, textarea').forEach(field => {
         field.value = '';
         field.classList.remove('valid', 'invalid');
         
-        // Сбрасываем стили
         field.style.borderColor = '';
         field.style.boxShadow = '';
     });
     
-    // Сбрасываем фокус
     form.querySelector('input').focus();
 }
 
-// Функция обработки отправки формы
 function handleFormSubmit(e) {
     e.preventDefault();
-    console.log('Form submitted');
     
     const form = document.querySelector('.modern-form');
     
-    // Собираем данные формы
     const nameInput = form.querySelector('input[name="name"]');
     const contactInput = form.querySelector('input[name="contact"]');
     const messageInput = form.querySelector('textarea[name="message"]');
     
-    console.log('Form inputs:', { nameInput, contactInput, messageInput });
-    
-    // Валидация
     let isValid = true;
     const errors = [];
     
-    // Проверяем все поля
     const fields = [nameInput, contactInput, messageInput];
     fields.forEach(field => {
         if (!validateField(field)) {
             isValid = false;
-            const fieldName = field.name === 'name' ? 'Имя' : 
-                            field.name === 'contact' ? 'Контакт' : 'Сообщение';
-            errors.push(`${fieldName} заполнено некорректно`);
+            const fieldName = field.name === 'name' ? 'Name' : 
+                            field.name === 'contact' ? 'Contact' : 'Message';
+            errors.push(`${fieldName} is filled incorrectly`);
         }
     });
     
-    console.log('Validation result:', { isValid, errors });
-    
     if (!isValid) {
-        showNotification('Пожалуйста, исправьте ошибки в форме', 'error');
+        showNotification('Please fix the errors in the form', 'error');
         return;
     }
     
-    console.log('Sending to Telegram:', {
-        name: nameInput.value.trim(),
-        contact: contactInput.value.trim(),
-        message: messageInput.value.trim()
-    });
-    
-    // Enhanced form submission animation
     const submitBtn = form.querySelector('.submit-btn');
-    console.log('Submit button found:', submitBtn);
     
     if (!submitBtn) {
-        console.error('Submit button not found!');
         return;
     }
     
     const originalText = submitBtn.textContent;
-    console.log('Original button text:', originalText);
     
     submitBtn.innerHTML = `
         <span style="display: inline-block; animation: spin 1s linear infinite;">⟳</span>
-        ${currentLang === 'ru' ? 'Отправляем...' : 'Sending...'}
+        Sending...
     `;
     submitBtn.style.opacity = '0.7';
     submitBtn.style.transform = 'scale(0.98)';
     
-    // Отправляем в Telegram
     sendToTelegram(nameInput.value.trim(), contactInput.value.trim(), messageInput.value.trim()).then(() => {
-        console.log('Telegram message sent successfully');
-        
-        // Success animation
-        submitBtn.innerHTML = `✓ ${currentLang === 'ru' ? 'Отправлено!' : 'Sent!'}`;
+        submitBtn.innerHTML = `✓ Sent!`;
         submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
         
-        // Показываем уведомление об успехе
-        showNotification('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.', 'success');
+        showNotification('Thank you for your request! We will contact you soon.', 'success');
         
-        // Очищаем форму
         clearForm(form);
         
         setTimeout(() => {
@@ -568,12 +491,10 @@ function handleFormSubmit(e) {
             submitBtn.style.background = 'linear-gradient(135deg, var(--primary-gold), var(--secondary-gold))';
         }, 1500);
     }).catch((error) => {
-        console.error('Error sending to Telegram:', error);
-        submitBtn.innerHTML = `✗ ${currentLang === 'ru' ? 'Ошибка!' : 'Error!'}`;
+        submitBtn.innerHTML = `✗ Error!`;
         submitBtn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
         
-        // Показываем уведомление об ошибке
-        showNotification('Произошла ошибка при отправке. Попробуйте еще раз.', 'error');
+        showNotification('An error occurred while sending. Please try again.', 'error');
         
         setTimeout(() => {
             submitBtn.textContent = originalText;
@@ -584,25 +505,19 @@ function handleFormSubmit(e) {
     });
 }
 
-// Функция отправки в Telegram
 async function sendToTelegram(name, contact, message) {
-    // IMPORTANT: Do not expose secrets on the client. Configure server-side endpoint or inject securely.
-    const BOT_TOKEN = 'YOUR_TELEGRAM_BOT_TOKEN';
-    const CHAT_ID = 'YOUR_TELEGRAM_CHAT_ID';
-
-    if (!BOT_TOKEN || BOT_TOKEN.startsWith('YOUR_') || !CHAT_ID || CHAT_ID.startsWith('YOUR_')) {
-        throw new Error('Telegram is not configured. Please set BOT_TOKEN and CHAT_ID securely on the server.');
-    }
+    const BOT_TOKEN = '8114076800:AAFsiGCiK3zu8J4j5H9lh9QO0fBBRBIQRYs';
+    const CHAT_ID = '-1002890319966';
     
     const telegramMessage = `
-🆕 Новая заявка с сайта WebLade
+🆕 New request from WebLade website
 
-👤 Имя: ${name}
-📱 Контакт: ${contact}
-💬 Сообщение: ${message}
+👤 Name: ${name}
+📱 Contact: ${contact}
+💬 Message: ${message}
 
-⏰ Время: ${new Date().toLocaleString('ru-RU')}
-🌐 Источник: ${window.location.href}
+⏰ Time: ${new Date().toLocaleString('en-US')}
+🌐 Source: ${window.location.href}
     `;
     
     const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
@@ -615,47 +530,37 @@ async function sendToTelegram(name, contact, message) {
             },
             body: JSON.stringify({
                 chat_id: CHAT_ID,
-                text: telegramMessage,
-                parse_mode: 'HTML'
+                text: telegramMessage
             })
         });
         
         if (!response.ok) {
             const errorData = await response.json();
-            console.error('Telegram API error:', errorData);
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         
         const result = await response.json();
-        console.log('Telegram response:', result);
         return result;
     } catch (error) {
-        console.error('Error sending to Telegram:', error);
         throw error;
     }
 }
 
-// Упрощенный portfolio effect без 3D анимаций
 function initPortfolioEffect() {
-    // Убираем 3D эффекты, оставляем только hover для показа overlay
     document.querySelectorAll('.portfolio-item').forEach(item => {
-        // Убираем все 3D трансформации и оставляем только CSS hover эффекты
         item.style.transform = 'none';
         item.style.boxShadow = 'none';
     });
 }
 
-// Service CTA button handlers
 function initServiceCTAs() {
     document.querySelectorAll('.service-cta').forEach(btn => {
         btn.addEventListener('click', function() {
-            // Scroll to contact form
             document.getElementById('contact').scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
             
-            // Add highlight effect to contact form
             const contactForm = document.querySelector('.contact-form');
             contactForm.style.transform = 'scale(1.02)';
             contactForm.style.boxShadow = '0 25px 80px rgba(139, 92, 246, 0.3)';
@@ -679,7 +584,6 @@ window.addEventListener('load', function() {
     if (window.performance && window.performance.navigation) {
         const perfData = window.performance.timing;
         const loadTime = perfData.loadEventEnd - perfData.navigationStart;
-        console.log(`Page load time: ${loadTime}ms`);
     }
 });
 
@@ -708,7 +612,6 @@ if (lazyElements.length > 0) {
     lazyElements.forEach(el => lazyObserver.observe(el));
 }
 
-// Mobile menu functionality with gesture support
 function initMobileMenu() {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
@@ -721,14 +624,12 @@ function initMobileMenu() {
     let currentX = 0;
     let isDragging = false;
     
-    // Toggle mobile menu
     mobileMenuToggle.addEventListener('click', function() {
         mobileMenu.classList.add('active');
         mobileMenuToggle.classList.add('active');
         document.body.style.overflow = 'hidden';
     });
     
-    // Close mobile menu
     function closeMobileMenu() {
         mobileMenu.classList.remove('active');
         mobileMenuToggle.classList.remove('active');
@@ -737,26 +638,22 @@ function initMobileMenu() {
     
     mobileMenuClose.addEventListener('click', closeMobileMenu);
     
-    // Close menu when clicking on nav links
     mobileNavLinks.forEach(link => {
         link.addEventListener('click', closeMobileMenu);
     });
     
-    // Close menu when clicking outside
     mobileMenu.addEventListener('click', function(e) {
         if (e.target === mobileMenu) {
             closeMobileMenu();
         }
     });
     
-    // Close menu on escape key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
             closeMobileMenu();
         }
     });
     
-    // Touch gesture support for mobile menu
     mobileMenu.addEventListener('touchstart', function(e) {
         startX = e.touches[0].clientX;
         isDragging = true;
@@ -768,7 +665,7 @@ function initMobileMenu() {
         currentX = e.touches[0].clientX;
         const diffX = startX - currentX;
         
-        if (diffX > 50) { // Swipe left to close
+        if (diffX > 50) {
             closeMobileMenu();
             isDragging = false;
         }
@@ -795,7 +692,6 @@ function initMobileMenu() {
     });
 }
 
-// Overlay для мобильного меню
 function initMobileMenuOverlay() {
     const mobileMenu = document.querySelector('.mobile-menu');
     const overlay = document.getElementById('mobile-menu-overlay');
@@ -819,19 +715,14 @@ function initMobileMenuOverlay() {
     });
 }
 
-// Add error handling
 window.addEventListener('error', function(e) {
-    console.error('JavaScript error:', e.error);
 });
 
-// Add service worker for caching (if needed)
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js').catch(err => {
-        console.log('Service worker registration failed:', err);
     });
 }
 
-// ===== PROGRESS BAR =====
 function initProgressBar() {
     const progressBar = document.getElementById('progress-bar');
     const progressFill = document.getElementById('progress-fill');
@@ -847,7 +738,6 @@ function initProgressBar() {
     });
 }
 
-// ===== BREADCRUMBS =====
 function initBreadcrumbs() {
     const breadcrumbs = document.querySelector('.breadcrumbs');
     const breadcrumbList = document.getElementById('breadcrumb-list');
@@ -919,9 +809,6 @@ function initBreadcrumbs() {
     updateBreadcrumbs();
 }
 
-// Удалена функция initSkeletonLoading и все её вызовы
-
-// ===== ENHANCED PARALLAX =====
 function initEnhancedParallax() {
     const parallaxElements = document.querySelectorAll('.parallax-element');
     
@@ -942,9 +829,7 @@ function initEnhancedParallax() {
     updateParallax();
 }
 
-// ===== MICRO ANIMATIONS =====
 function initMicroAnimations() {
-    // Enhanced hover effects for buttons
     document.querySelectorAll('.cta-button').forEach(button => {
         button.addEventListener('mouseenter', () => {
             button.style.transform = 'translateY(-2px) scale(1.02)';
@@ -955,7 +840,6 @@ function initMicroAnimations() {
         });
     });
     
-    // Enhanced link effects
     document.querySelectorAll('.nav-links a, .mobile-nav-links a').forEach(link => {
         link.addEventListener('mouseenter', () => {
             link.style.transform = 'translateY(-1px)';
@@ -966,7 +850,6 @@ function initMicroAnimations() {
         });
     });
     
-    // Enhanced card effects
     document.querySelectorAll('.portfolio-item').forEach(card => {
         card.addEventListener('mouseenter', () => {
             card.style.transform = 'translateY(-5px) rotateX(2deg)';
@@ -977,7 +860,6 @@ function initMicroAnimations() {
         });
     });
     
-    // Enhanced service tab effects
     document.querySelectorAll('.service-tab').forEach(tab => {
         tab.addEventListener('mouseenter', () => {
             tab.style.transform = 'translateY(-2px) scale(1.02)';
@@ -989,7 +871,6 @@ function initMicroAnimations() {
     });
 }
 
-// ===== SMOOTH SCROLLING =====
 function initSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -1027,9 +908,7 @@ function initSmoothScrolling() {
     });
 }
 
-// ===== ENHANCED TYPOGRAPHY =====
 function initEnhancedTypography() {
-    // Dynamic font loading
     if ('fonts' in document) {
         Promise.all([
             document.fonts.load('300 1em Inter'),
@@ -1070,20 +949,16 @@ function initEnhancedTypography() {
     });
 }
 
-// ===== PERFORMANCE OPTIMIZATIONS =====
 function initPerformanceOptimizations() {
-    // Debounce scroll events
     let scrollTimeout;
     window.addEventListener('scroll', () => {
         if (scrollTimeout) {
             clearTimeout(scrollTimeout);
         }
         scrollTimeout = setTimeout(() => {
-            // Handle scroll-based updates
-        }, 16); // ~60fps
+        }, 16);
     });
     
-    // Preload critical images
     const criticalImages = [
         'img/war_room.png',
         'img/luna.png',
@@ -1096,7 +971,6 @@ function initPerformanceOptimizations() {
         img.src = src;
     });
     
-    // Lazy load non-critical images
     const lazyImages = document.querySelectorAll('img[data-src]');
     const imageObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -1112,69 +986,9 @@ function initPerformanceOptimizations() {
     lazyImages.forEach(img => imageObserver.observe(img));
 }
 
-// ===== CASE STUDY MODAL =====
-function initCaseStudyModal() {
-    const modal = document.getElementById('case-study-modal');
-    const modalClose = document.getElementById('modal-close');
-    const portfolioLinks = document.querySelectorAll('.portfolio-link[data-project]');
-    
-    if (!modal || !modalClose) return;
-    
-    // Open modal
-    portfolioLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const project = this.dataset.project;
-            openCaseStudyModal(project);
-        });
-    });
-    
-    // Close modal
-    modalClose.addEventListener('click', closeCaseStudyModal);
-    
-    // Close on overlay click
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal || e.target.classList.contains('modal-overlay')) {
-            closeCaseStudyModal();
-        }
-    });
-    
-    // Close on escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-            closeCaseStudyModal();
-        }
-    });
-}
 
-function openCaseStudyModal(project) {
-    const modal = document.getElementById('case-study-modal');
-    if (modal) {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        
-        // Update modal content based on project
-        updateModalContent(project);
-    }
-}
 
-function closeCaseStudyModal() {
-    const modal = document.getElementById('case-study-modal');
-    if (modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-}
-
-function updateModalContent(project) {
-    // This function can be expanded to load different case studies
-    // For now, we'll use the existing content
-    console.log('Loading case study for project:', project);
-}
-
-// ===== ENHANCED NAVIGATION =====
 function updateNavigation() {
-    // Update breadcrumbs with new sections
     const sections = [
         { id: 'home', title: { ru: 'Главная', en: 'Home' }, icon: '🏠' },
         { id: 'services', title: { ru: 'Услуги', en: 'Services' }, icon: '⚙️' },
@@ -1184,7 +998,6 @@ function updateNavigation() {
         { id: 'contact', title: { ru: 'Контакты', en: 'Contact' }, icon: '📞' }
     ];
     
-    // Update breadcrumbs function
     function updateBreadcrumbs() {
         const breadcrumbs = document.querySelector('.breadcrumbs');
         const breadcrumbList = document.getElementById('breadcrumb-list');
@@ -1256,7 +1069,6 @@ function updateNavigation() {
     updateBreadcrumbs();
 }
 
-// ===== ENHANCED SCROLL ANIMATIONS =====
 function initEnhancedScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
@@ -1269,7 +1081,6 @@ function initEnhancedScrollAnimations() {
                 entry.target.classList.add('animated');
                 entry.target.classList.add('visible');
                 
-                // Add delay for staggered animations
                 const delay = entry.target.dataset.delay;
                 if (delay) {
                     setTimeout(() => {
@@ -1281,12 +1092,10 @@ function initEnhancedScrollAnimations() {
         });
     }, observerOptions);
     
-    // Observe all animate-on-scroll elements
     document.querySelectorAll('.animate-on-scroll').forEach(el => {
         observer.observe(el);
     });
     
-    // Also observe content sections for skeleton loading
     const contentSections = [
         'hero-content',
         'services-content', 
@@ -1302,9 +1111,7 @@ function initEnhancedScrollAnimations() {
     });
 }
 
-// ===== ENHANCED MICRO ANIMATIONS =====
 function initEnhancedMicroAnimations() {
-    // Enhanced hover effects for buttons
     document.querySelectorAll('.cta-button').forEach(button => {
         button.addEventListener('mouseenter', () => {
             button.style.transform = 'translateY(-2px) scale(1.02)';
@@ -1315,7 +1122,6 @@ function initEnhancedMicroAnimations() {
         });
     });
     
-    // Enhanced link effects
     document.querySelectorAll('.nav-links a, .mobile-nav-links a').forEach(link => {
         link.addEventListener('mouseenter', () => {
             link.style.transform = 'translateY(-1px)';
@@ -1326,7 +1132,6 @@ function initEnhancedMicroAnimations() {
         });
     });
     
-    // Enhanced card effects
     document.querySelectorAll('.portfolio-item, .why-us-item, .testimonial').forEach(card => {
         card.addEventListener('mouseenter', () => {
             card.style.transform = 'translateY(-5px) rotateX(2deg)';
@@ -1337,7 +1142,6 @@ function initEnhancedMicroAnimations() {
         });
     });
     
-    // Enhanced service tab effects
     document.querySelectorAll('.service-tab').forEach(tab => {
         tab.addEventListener('mouseenter', () => {
             tab.style.transform = 'translateY(-2px) scale(1.02)';
@@ -1348,7 +1152,6 @@ function initEnhancedMicroAnimations() {
         });
     });
     
-    // Enhanced icon animations
     document.querySelectorAll('.why-us-icon, .feature-icon').forEach(icon => {
         icon.addEventListener('mouseenter', () => {
             icon.style.transform = 'scale(1.1) rotate(5deg)';
@@ -1360,32 +1163,23 @@ function initEnhancedMicroAnimations() {
     });
 }
 
-// ===== INITIALIZATION =====
 document.addEventListener('DOMContentLoaded', function() {
-    // Loader and initial visuals
-    // Удалён вызов createLoader() и сама функция createLoader
-    
-    // Icons
     if (window.lucide && typeof window.lucide.createIcons === 'function') {
         window.lucide.createIcons();
     }
     
-    // Language & typewriter
     switchLanguage('en');
     initTypewriter();
     
-    // Visual/UX enhancements
     initProgressBar();
     initEnhancedParallax();
     initEnhancedMicroAnimations();
     initSmoothScrolling();
     initEnhancedTypography();
     initPerformanceOptimizations();
-    initCaseStudyModal();
     updateNavigation();
     initEnhancedScrollAnimations();
     
-    // Site features
     initNavbarScroll();
     initPortfolioEffect();
     initMobileMenu();
@@ -1394,18 +1188,15 @@ document.addEventListener('DOMContentLoaded', function() {
     initServiceTabs();
     initServiceCTAs();
     
-    // Language switchers (desktop + mobile)
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.addEventListener('click', function() {
             switchLanguage(this.dataset.lang);
         });
     });
 
-    console.log('🚀 WebLade initialized with enhanced premium features');
+
     initMobileMenuOverlay();
 });
-
-// ===== UTILITY FUNCTIONS =====
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
